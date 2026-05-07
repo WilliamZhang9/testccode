@@ -4,20 +4,21 @@ def fetch_users():
     url = "https://jsonplaceholder.typicode.com/users"
     response = requests.get(url)
 
-    # Fix: Changed assignment (=) to equality (==)
-    if response.status_code == 200:
+    if response.status_code == 200:  # Fixed: Changed = to ==
         return response.json()
+    else:
+        print(f"Failed to fetch users. Status code: {response.status_code}")
+        return None
 
 def print_names(users):
     for user in users:
-        # Fix: Added parentheses to execute the .upper() method
-        print(user["name"].upper())
+        print(user["name"].upper())  # Fixed: Added () to call the method
 
 def main():
     users = fetch_users()
-    if users:
+    if users: # Added: Check if users were successfully fetched
         print_names(users)
     else:
-        print("Failed to fetch users or no users found.")
+        print("No users to display.")
 
 main()
