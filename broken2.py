@@ -12,6 +12,6 @@ def start_server():
     if config["debug"] == True:
         print("Debug mode ON")
 
-    print("Running on port " + str(config["port"]))
+    print(f"Running on port {config['port']}")
 
 start_server()
