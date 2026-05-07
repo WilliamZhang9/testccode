@@ -1,23 +1,16 @@
-class User:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+def calculate_area(radius):
+    import math
+    if radius < 0:
+        raise ValueError("Radius cannot be negative")
+    return math.pi * radius ** 2
 
-    def is_adult(self):
-        return self.age > 18
+def main():
+    try:
+        radius = float(input("Enter the radius: "))
+        area = calculate_area(radius)
+        print(f"The area is: {area}")
+    except ValueError as e:
+        print(f"Error: {e}")
 
-def create_users():
-    users = [
-        User("Alice", 25),
-        User("Bob", 19),
-        User("Charlie", 30)
-    ]
-    return users
-
-def print_adults(users):
-    for user in users:
-        if user.is_adult():
-            print(user.name)
-
-users = create_users()
-print_adults(users)
+if __name__ == "__main__":
+    main()
