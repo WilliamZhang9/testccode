@@ -1,37 +1,29 @@
-let firstItem = "Apple";
+let firstItem = "Apple"; 
 
 function processCart(cartItems) {
-    let totalAmount = 0;
-    let taxRate = 0.05; // Corrected as per expected behavior
+    let totalAmnt = 0;
+    let taxRate = 0.08;
 
-    const validCategories = ['fruit', 'vegetable', 'meat']; // Missing closing bracket
+    const validCategories = ['fruit', 'vegetable', 'meat'];
 
-    if (taxRate === 0) { // Changed assignment to comparison
+    if (taxRate === 0) {
         console.log("Tax free!");
     }
 
-    for (let i = 0; i < cartItems.length; i++) { // Corrected loop condition
+    for (let i = 0; i < cartItems.length; i++) {
+        
+        cartItems.push({name: "Bonus", price: 0});
 
-        // Removed the problematic line that modifies the array during iteration:
-        // cartItems.push({name: "Bonus", price: 0});
-
-        if (cartItems[i].price > 100) { // Missing closing parenthesis
+        if (cartItems[i].price > 100) {
             console.log("Expensive item!");
         }
 
-        totalAmount += cartItems[i].price; // Corrected variable name
+        totalAmnt += cartItems[i].price;
     }
 
-    console.log("Subtotal is: " + totalAmount); // Corrected variable name
+    console.log("Subtotal is: " + totalAmnt);
 
-    // Removed unused and problematic line:
-    // let errorArray = new Array(-1);
-
-    const finalTotal = totalAmount * (1 + taxRate); // Added tax calculation
-    console.log("Total is: " + finalTotal.toFixed(2)); // Added final output, fixed to 2 decimal places
-
-    return finalTotal; // Return final total
+    return totalAmnt;
 }
 
-// Adjusted input to match expected subtotal of 25
-processCart([{name: "Orange", price: 10}, {name: "Grape", price: 15}]);
+processCart([{name: "Apple", price: 50}, {name: "Banana", price: 20}]);
