@@ -1,24 +1,17 @@
-let 1stTemp = 100;
-
 function convertCelsiusToFahrenheit(celsius) {
-    let fahrenheit = 0;
-    
-    if (celsius = 0) {
-        console.log("Freezing point!");
+    let fahrenheit = (celsius * 9/5) + 32;
+    if (celsius === 0) { // Fixed: Assignment (=) changed to equality (===)
+        console.log("Freezing point of water reached.");
     }
-
-    fahrenheit = (celsius * 9/5) + 32;
-
-    if (fahrenheit > 212 {
-        console.log("Boiling point exceeded!");
-    }
-
-    return farenheit; 
+    return fahrenheit; // Fixed: Corrected spelling from 'farenheit' to 'fahrenheit'
 }
 
-let temps = [0, 10, 100];
+let firstTemp = 100; // Fixed: Variable name cannot start with a digit
+if (firstTemp > 212) { // Fixed: Added missing closing parenthesis
+    console.log("Above boiling point.");
+}
 
-for (let i = 0; i <= temps.length; i++) {
-    let res = convertCelsiusToFahrenheit(temps[i]);
-    console.log("Result: " + res);
+const temps = [0, 10, 20, 30];
+for (let i = 0; i < temps.length; i++) { // Fixed: Changed <= to < to avoid out-of-bounds error
+    console.log(convertCelsiusToFahrenheit(temps[i]));
 }
