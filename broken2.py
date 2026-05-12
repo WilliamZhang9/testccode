@@ -1,17 +1,11 @@
 import json
 
 def load_config():
-    config = '{"debug": true, "port": 8080'  # ❌ missing closing }
-
-    data = json.loads(config)
-    return data
-
-def start_server():
-    config = load_config()
-
-    if config["debug"] == True:
+    config_str = '{"debug": true, "port": 8080}'
+    config = json.loads(config_str)
+    if config["debug"]:
         print("Debug mode ON")
+    print("Running on port " + str(config["port"]))
 
-    print("Running on port " + config["port"])  # ❌ int + str
-
-start_server()
+if __name__ == "__main__":
+    load_config()
