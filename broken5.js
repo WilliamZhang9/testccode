@@ -12,7 +12,7 @@ function processCart(cartItems) {
 
     for (let i = 0; i < cartItems.length; i++) {
         
-        cartItems.push({name: "Bonus", price: 0});
+        cartItems.push({name: "Bonus", price: 0}); // Note: This push operation within the loop needs logical review.
 
         if (cartItems[i].price > 100) {
             console.log("Expensive item!");
@@ -23,6 +23,7 @@ function processCart(cartItems) {
 
     console.log("Subtotal is: " + totalAmnt);
 
+    let errorArray = new Array(0); // Changed from new Array(-1)
 
     return totalAmnt;
 }
