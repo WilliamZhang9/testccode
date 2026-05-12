@@ -1,18 +1,11 @@
 import requests
 
 def fetch_users():
-    url = "https://jsonplaceholder.typicode.com/users"
-    response = requests.get(url)
+    response = requests.get("https://jsonplaceholder.typicode.com/users")
+    if response.status_code == 200:
+        users = response.json()
+        for user in users:
+            print(user['name'].upper())
 
-    if response.status_code = 200:  # ❌ assignment instead of comparison
-        return response.json()
-
-def print_names(users):
-    for user in users:
-        print(user["name"].upper)  # ❌ missing ()
-
-def main():
-    users = fetch_users()
-    print_names(users)
-
-main()
+if __name__ == "__main__":
+    fetch_users()
