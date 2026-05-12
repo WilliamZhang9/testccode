@@ -23,6 +23,7 @@ function processCart(cartItems) {
 
     console.log("Subtotal is: " + totalAmnt);
 
+
     return totalAmnt;
 }
 
