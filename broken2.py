@@ -1,17 +1,11 @@
 import json
 
-def load_config():
-    config = '{"debug": true, "port": 8080'  # ❌ missing closing }
+# FIX: Added missing closing brace '}' to the JSON string
+config_str = '{"debug": true, "port": 8080}'
+config = json.loads(config_str)
 
-    data = json.loads(config)
-    return data
+if config["debug"]:
+    print("Debug mode ON")
 
-def start_server():
-    config = load_config()
-
-    if config["debug"] == True:
-        print("Debug mode ON")
-
-    print("Running on port " + config["port"])  # ❌ int + str
-
-start_server()
+# FIX: Wrapped integer in str() to allow concatenation with string
+print("Running on port " + str(config["port"]))
