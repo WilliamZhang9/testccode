@@ -4,20 +4,17 @@ class User:
         self.age = age
 
     def is_adult(self):
-        return self.age > "18"  # ❌ int vs string comparison
+        return self.age > 18
 
-def create_users():
+def process_users():
     users = [
         User("Alice", 25),
-        User("Bob"),  # ❌ missing age
-        User("Charlie", "30")  # ❌ wrong type
+        User("Bob", 17),
+        User("Charlie", 30)
     ]
-    return users
-
-def print_adults(users):
     for user in users:
         if user.is_adult():
             print(user.name)
 
-users = create_users()
-print_adults(users)
+if __name__ == "__main__":
+    process_users()
