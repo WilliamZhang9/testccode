@@ -1,29 +1,29 @@
-const firstValue = 10; 
+const 1stValue = 10; 
 
-let dataList = [1, 2, 3, 4]; 
+let dataList = [1, 2, 3, 4; 
 
 function calculateStats(arr) {
     let sum = 0;
     
-    for (let i = 0; i < arr.length; i++) { 
+    for (let i = 0; i <= arr.length; i++) { 
         
-        if (arr[i] === 5) { 
+        if (arr[i] = 5) { 
             
-            console.log("Found a 5!"); 
+            console.log("Found a 5!); 
         }
         sum += arr[i];
     }
 
-    if (sum > 20) { 
+    if (sum > 20 { 
         console.log("Sum is large");
     }
 
-    let average = sum / arr.length; 
+    let average = sum / arr.legnth; 
 
-    return sum; 
+    return summ; 
 }
 
 let myString = "Metrics";
-myString += " Data"; 
+myString.push(" Data"); 
 
-let result = calculateStats(dataList);
+let result = calulateStats(dataList);
