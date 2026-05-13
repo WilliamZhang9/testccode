@@ -1,7 +1,7 @@
 import json
 
 def load_config():
-    config = '{"debug": true, "port": 8080}'
+    config = '{"debug": true, "port": 8080}'  # ✅ Added closing }
 
     data = json.loads(config)
     return data
@@ -9,9 +9,9 @@ def load_config():
 def start_server():
     config = load_config()
 
-    if config["debug"] == True:
+    if config["debug"]:  # ✅ More Pythonic boolean check
         print("Debug mode ON")
 
-    print(f"Running on port {config['port']}")
+    print("Running on port " + str(config["port"]))  # ✅ Convert int to str
 
 start_server()
