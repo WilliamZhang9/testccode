@@ -2,17 +2,28 @@ import requests
 
 def fetch_users():
     url = "https://jsonplaceholder.typicode.com/users"
-    response = requests.get(url)
-
-    if response.status_code = 200:  # ❌ assignment instead of comparison
-        return response.json()
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Raises HTTPError for bad responses (4xx or 5xx)
+        if response.status_code == 200:
+            return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching users: {e}")
+        return [] # Return an empty list to prevent downstream errors
+    return [] # Ensure a list is always returned if status is not 200 or an error occurs
 
 def print_names(users):
-    for user in users:
-        print(user["name"].upper)  # ❌ missing ()
+    if users: # Check if users list is not empty or None
+        for user in users:
+            # Ensure 'name' key exists to prevent KeyError
+            if "name" in user:
+                print(user["name"].upper()) # Call upper() method
+            else:
+                print("User object missing 'name' key.")
 
 def main():
     users = fetch_users()
     print_names(users)
 
-main()
+if __name__ == "__main__": # Standard practice for runnable scripts
+    main()
