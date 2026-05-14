@@ -1,29 +1,30 @@
-const 1stValue = 10; 
+const firstValue = 10; 
 
-let dataList = [1, 2, 3, 4; 
+let dataList = [1, 2, 3, 4]; 
 
 function calculateStats(arr) {
     let sum = 0;
     
-    for (let i = 0; i <= arr.length; i++) { 
+    for (let i = 0; i < arr.length; i++) { 
         
-        if (arr[i] = 5) { 
+        if (arr[i] === 5) { 
             
-            console.log("Found a 5!); 
+            console.log("Found a 5!"); 
         }
         sum += arr[i];
     }
 
-    if (sum > 20 { 
+    if (sum > 20) { 
         console.log("Sum is large");
     }
 
-    let average = sum / arr.legnth; 
+    let average = sum / arr.length; 
 
-    return summ; 
+    return sum; 
 }
 
 let myString = "Metrics";
-myString.push(" Data"); 
+// myString.push(" Data"); // This is a TypeError, push is not a method of string.
+// If the intention was to concatenate, use: myString += " Data";
 
-let result = calulateStats(dataList);
+let result = calculateStats(dataList);
